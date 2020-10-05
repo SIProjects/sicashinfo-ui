@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="navbar-brand is-size-4">
       <nuxt-link to="/" class="navbar-item navbar-logo">
-        <span class="qtum-icon qtum-icon--qtum" /> qtum.info
+        <span class="sicash-icon sicash-icon--sicash" /> sicash.info
       </nuxt-link>
       <button type="button" class="button navbar-burger" @click="showMenu = !showMenu">
         <span></span><span></span><span></span>
@@ -38,7 +38,7 @@
       <form class="navbar-end" @submit.prevent="search">
         <div class="navbar-item input-item">
           <input type="text" class="input" v-model="searchString" :placeholder="$t('nav.search')">
-          <button type="submit" class="button is-qtum" :class="{'is-loading': searching}">
+          <button type="submit" class="button is-sicash" :class="{'is-loading': searching}">
             <Icon icon="search" />
           </button>
         </div>
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-  import {get as qtuminfoGet} from '@/services/qtuminfo-api'
+  import {get as sicashinfoGet} from '@/services/sicashinfo-api'
 
   export default {
     data() {
@@ -66,7 +66,7 @@
         }
         this.searching = true
         try {
-          let {type, id, address} = await qtuminfoGet(`/search`, {params: {query: searchString}})
+          let {type, id, address} = await sicashinfoGet(`/search`, {params: {query: searchString}})
           switch (type) {
           case 'address':
             this.searchString = ''
@@ -102,7 +102,7 @@
 <style lang="less" scoped>
   .navbar-logo {
     display: inline-block;
-    .qtum-icon {
+    .sicash-icon {
       vertical-align: middle;
     }
   }

@@ -22,11 +22,11 @@
             </p>
             <p class="information">
               <span class="key">{{ $t('blockchain.network_weight') }}</span>:
-              <span class="value">{{ stakeWeight | qtum(8) }}</span>
+              <span class="value">{{ stakeWeight | sicash(8) }}</span>
             </p>
             <p class="information">
               <span class="key">{{ $t('blockchain.fee_rate') }}</span>:
-              <span class="value">{{ feeRate }} QTUM/kB</span>
+              <span class="value">{{ feeRate }} SICASH/kB</span>
             </p>
           </div>
         </div>
@@ -43,16 +43,16 @@
             <h3 class="card-header-title">
               {{ $tc('blockchain.block', 2) }}
             </h3>
-            <nuxt-link to="/block" class="card-header-button button is-qtum is-outlined">
+            <nuxt-link to="/block" class="card-header-button button is-sicash is-outlined">
               {{ $t('action.view_all') }}
             </nuxt-link>
           </div>
           <div class="card-body">
-            <div v-for="block in recentBlocks" class="qtum-block is-size-7" :key="block.hash">
+            <div v-for="block in recentBlocks" class="sicash-block is-size-7" :key="block.hash">
               <div class="level">
                 <div class="level-left">
                   <nuxt-link :to="{name: 'block-id', params: {id: block.height}}"
-                    class="level-item qtum-block-box has-text-centered">
+                    class="level-item sicash-block-box has-text-centered">
                     {{ $tc('blockchain.block', 1) }} #{{ block.height }}
                     <FromNow :timestamp="block.timestamp" />
                   </nuxt-link>
@@ -65,7 +65,7 @@
                       {{ $t('block.brief.transaction', [block.transactionCount, block.interval]) }}
                       <br>
                       <span class="monospace">
-                        {{ $t('block.brief.reward') }} {{ block.reward | qtum }} QTUM
+                        {{ $t('block.brief.reward') }} {{ block.reward | sicash }} SICASH
                       </span>
                     </div>
                   </div>
@@ -90,7 +90,7 @@
             <div v-for="transaction in recentTransactions" :key="transaction.id" class="is-size-7 transaction">
               <div class="level">
                 <TransactionLink :transaction="transaction.id" class="level-left" />
-                <span class="level-right">{{ transaction.outputValue | qtum }} QTUM</span>
+                <span class="level-right">{{ transaction.outputValue | sicash }} SICASH</span>
               </div>
             </div>
           </div>
@@ -104,12 +104,12 @@
   import Block from "@/models/block"
   import Transaction from "@/models/transaction"
   import Misc from '@/models/misc'
-  import {RequestError} from '@/services/qtuminfo-api'
+  import {RequestError} from '@/services/sicashinfo-api'
 
   export default {
     head() {
       return {
-        title: 'qtum.info',
+        title: 'sicash.info',
         titleTemplate: null
       }
     },
@@ -202,7 +202,7 @@
     margin: 0;
   }
 
-  .qtum-block {
+  .sicash-block {
     padding: 1em;
     border-top: 1px solid #eee;
     &:first-child {
@@ -210,14 +210,14 @@
     }
   }
 
-  .qtum-block-box {
+  .sicash-block-box {
     flex-direction: column;
     min-width: 11em;
     padding: 1em;
     background-color: #eee;
     color: inherit;
     &:hover {
-      outline: 1px solid @qtum;
+      outline: 1px solid @sicash;
     }
   }
 

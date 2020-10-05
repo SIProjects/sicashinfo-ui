@@ -44,7 +44,7 @@
         </div>
         <div class="columns" v-if="fees > 0">
           <div class="column info-title">{{ $t('transaction.transaction_fee') }}</div>
-          <div class="column info-value monospace">{{ fees | qtum }} QTUM</div>
+          <div class="column info-value monospace">{{ fees | sicash }} SICASH</div>
         </div>
 
         <Transaction
@@ -119,7 +119,7 @@
 <script>
   import Block from '@/models/block'
   import Transaction from '@/models/transaction'
-  import {RequestError} from '@/services/qtuminfo-api'
+  import {RequestError} from '@/services/sicashinfo-api'
 
   export default {
     head() {

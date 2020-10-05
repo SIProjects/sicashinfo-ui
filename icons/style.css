@@ -1,16 +1,16 @@
 @font-face {
-  font-family: 'qtum-icons';
-  src: url('fonts/qtum-icons.eot?vyas3r');
-  src: url('fonts/qtum-icons.eot?vyas3r#iefix') format('embedded-opentype'),
-    url('fonts/qtum-icons.ttf?vyas3r') format('truetype'),
-    url('fonts/qtum-icons.woff?vyas3r') format('woff'),
-    url('fonts/qtum-icons.svg?vyas3r#qtum-icons') format('svg');
+  font-family: 'sicash-icons';
+  src: url('fonts/sicash-icons.eot?vyas3r');
+  src: url('fonts/sicash-icons.eot?vyas3r#iefix') format('embedded-opentype'),
+    url('fonts/sicash-icons.ttf?vyas3r') format('truetype'),
+    url('fonts/sicash-icons.woff?vyas3r') format('woff'),
+    url('fonts/sicash-icons.svg?vyas3r#sicash-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-.qtum-icon {
-  font-family: 'qtum-icons' !important;
+.sicash-icon {
+  font-family: 'sicash-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -21,9 +21,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.qtum-icon--qtum:before {
+.sicash-icon--sicash:before {
   content: "\e906";
 }
-.qtum-icon--discord:before {
+.sicash-icon--discord:before {
   content: "\e90d";
 }

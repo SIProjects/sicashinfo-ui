@@ -33,16 +33,16 @@
         <div class="columns">
           <div class="column info-title">{{ $t('address.balance') }}</div>
           <div class="column info-value monospace">
-            {{ balance | qtum }} QTUM
+            {{ balance | sicash }} SICASH
             <span v-if="unconfirmed !== '0' && staking !== '0'">
-              ({{ unconfirmed | qtum }} QTUM {{ $t('address.unconfirmed') }},
-              {{ staking | qtum }} QTUM {{ $t('address.staking') }})
+              ({{ unconfirmed | sicash }} SICASH {{ $t('address.unconfirmed') }},
+              {{ staking | sicash }} SICASH {{ $t('address.staking') }})
             </span>
             <span v-else-if="unconfirmed !== '0'">
-              ({{ unconfirmed | qtum }} QTUM {{ $t('address.unconfirmed') }})
+              ({{ unconfirmed | sicash }} SICASH {{ $t('address.unconfirmed') }})
             </span>
             <span v-else-if="staking !== '0'">
-              ({{ staking | qtum }} QTUM {{ $t('address.staking') }})
+              ({{ staking | sicash }} SICASH {{ $t('address.staking') }})
             </span>
           </div>
         </div>
@@ -52,11 +52,11 @@
         </div>
         <div class="columns">
           <div class="column info-title">{{ $t('address.total_received') }}</div>
-          <div class="column info-value monospace">{{ totalReceived | qtum }} QTUM</div>
+          <div class="column info-value monospace">{{ totalReceived | sicash }} SICASH</div>
         </div>
         <div class="columns">
           <div class="column info-title">{{ $t('address.total_sent') }}</div>
-          <div class="column info-value monospace">{{ totalSent | qtum }} QTUM</div>
+          <div class="column info-value monospace">{{ totalSent | sicash }} SICASH</div>
         </div>
         <div class="columns" v-if="existingTokenBalances.length">
           <div class="column info-title">{{ $t('address.token_balances') }}</div>
@@ -109,7 +109,7 @@
   import Vue from 'vue'
   import Address from '@/models/address'
   import Transaction from '@/models/transaction'
-  import {RequestError} from '@/services/qtuminfo-api'
+  import {RequestError} from '@/services/sicashinfo-api'
   import {extendAddress} from '@/utils/address'
   import {scrollIntoView} from '@/utils/dom'
 

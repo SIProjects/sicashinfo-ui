@@ -1,7 +1,7 @@
 {
-  "name": "qtuminfo-ui",
+  "name": "sicashinfo-ui",
   "version": "0.0.1",
-  "description": "An open-source frontend for the Qtuminfo API",
+  "description": "An open-source frontend for the SICashinfo API",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qtumproject/qtuminfo-ui.git"
+    "url": "git+https://github.com/SICashProjects/sicashinfo-ui.git"
   },
   "keywords": [
-    "qtum",
-    "qtuminfo",
-    "qtum explorer"
+    "sicash",
+    "sicashinfo",
+    "sicash explorer"
   ],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/qtumproject/qtuminfo-ui/issues"
+    "url": "https://github.com/SICashProjects/sicashinfo-ui/issues"
   },
-  "homepage": "https://github.com/qtumproject/qtuminfo-ui#readme",
+  "homepage": "https://github.com/SICashProjects/sicashinfo-ui#readme",
   "dependencies": {
     "axios": "^0.19.0",
     "bn.js": "^5.0.0",
