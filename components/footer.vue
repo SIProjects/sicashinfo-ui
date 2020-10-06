@@ -21,7 +21,7 @@
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://github.com/SICashProjects/sicash">
+          <a target="_blank" href="https://github.com/SIProjects/sicash">
             <Icon icon="github" brands /> Github
           </a>
         </li>

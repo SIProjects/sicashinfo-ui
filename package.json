@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SICashProjects/sicashinfo-ui.git"
+    "url": "git+https://github.com/SIProjects/sicashinfo-ui.git"
   },
   "keywords": [
     "sicash",
@@ -19,9 +19,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SICashProjects/sicashinfo-ui/issues"
+    "url": "https://github.com/SIProjects/sicashinfo-ui/issues"
   },
-  "homepage": "https://github.com/SICashProjects/sicashinfo-ui#readme",
+  "homepage": "https://github.com/SIProjects/sicashinfo-ui#readme",
   "dependencies": {
     "axios": "^0.19.0",
     "bn.js": "^5.0.0",
