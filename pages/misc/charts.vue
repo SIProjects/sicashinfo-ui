@@ -56,10 +56,33 @@
         ])
         let chart = echarts.init(this.$refs['daily-transactions'])
         chart.setOption({
-          title: {text: this.$t('misc.stats.daily_transactions')},
+          title: {
+            text: this.$t('misc.stats.daily_transactions'),
+            textStyle: {
+              color: "#fff"
+            }
+          },
           tooltip: {trigger: 'axis', axisPointer: {axis: 'x'}},
-          xAxis: {type: 'time'},
-          yAxis: {type: 'value', minInterval: 1},
+          xAxis: {
+            type: 'time',
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            }
+          },
+          yAxis: {
+            type: 'value',
+            minInterval: 1,
+            textStyle: {
+              color: '#ed2d2e'
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            }
+          },
           series: [
             {
               type: 'bar',
@@ -103,17 +126,38 @@
         let maxInterval = Math.ceil(Math.log(total * 2 / 9) / Math.log(9 / 8))
         let chart = echarts.init(this.$refs['block-interval'])
         chart.setOption({
-          title: {text: this.$t('misc.stats.block_interval')},
+          title: {
+            text: this.$t('misc.stats.block_interval'),
+            textStyle: {
+              color: "#fff"
+            }
+          },
           tooltip: {trigger: 'axis', axisPointer: {axis: 'x'}},
           xAxis: {
             type: 'value',
             name: this.$t('misc.stats.interval'),
-            minInterval: 16
+            nameTextStyle: {
+              color: '#fff'
+            },
+            minInterval: 16,
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            }
           },
           yAxis: {
             type: 'value',
             name: this.$t('misc.stats.blocks'),
-            minInterval: 1
+            nameTextStyle: {
+              color: '#fff'
+            },
+            minInterval: 1,
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            }
           },
           series: {
             type: 'bar',
@@ -136,10 +180,30 @@
         ])
         let chart = echarts.init(this.$refs['address-growth'])
         chart.setOption({
-          title: {text: this.$t('misc.stats.address_growth')},
+          title: {
+            text: this.$t('misc.stats.address_growth'),
+            textStyle: {
+              color: '#fff'
+            }
+          },
           tooltip: {trigger: 'axis', axisPointer: {axis: 'x'}},
-          xAxis: {type: 'time'},
-          yAxis: {type: 'value', minInterval: 1},
+          xAxis: {
+            type: 'time',
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            }
+          },
+          yAxis: {
+            type: 'value',
+            minInterval: 1,
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            }
+          },
           series: {
             type: 'line',
             name: this.$tc('blockchain.address', 2),
@@ -181,5 +245,6 @@
     bottom: 0;
     left: 0;
     right: 0;
+    color: white;
   }
 </style>

@@ -9,7 +9,7 @@ export default {
     ]
   },
   css: [
-    'bulma/css/bulma.css',
+    '@/styles/main.scss',
     '@fortawesome/fontawesome-free/css/all.css',
     '@/styles/common.less',
     '@/styles/card.less',

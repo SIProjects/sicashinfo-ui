@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar is-dark">
     <div class="navbar-brand is-size-4">
       <nuxt-link to="/" class="navbar-item navbar-logo">
         <span class="sicash-icon sicash-icon--sicash" /> sicash.info
@@ -9,7 +9,7 @@
       </button>
     </div>
     <div class="navbar-menu" :class="{'is-active': showMenu}">
-      <div class="navbar-start is-uppercase">
+      <div class="navbar-start">
         <AttributeInjector class="navbar-item" @click.native="showMenu = !showMenu">
           <nuxt-link to="/block">{{ $tc('blockchain.block', 2) }}</nuxt-link>
           <nuxt-link to="/contract/tokens">{{ $tc('blockchain.token') }}</nuxt-link>

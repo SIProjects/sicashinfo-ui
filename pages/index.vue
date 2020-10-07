@@ -35,7 +35,7 @@
 
     <section class="columns is-multiline is-desktop">
       <div class="column is-half">
-        <div class="card">
+        <div class="card is-dark">
           <div class="card-header">
             <div class="card-header-icon">
               <Icon icon="cubes" fixedWidth />
@@ -214,10 +214,11 @@
     flex-direction: column;
     min-width: 11em;
     padding: 1em;
-    background-color: #eee;
+    background-color: #272b30;
     color: inherit;
     &:hover {
       outline: 1px solid @sicash;
+      text-decoration: none;
     }
   }
 

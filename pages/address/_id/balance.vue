@@ -1,7 +1,7 @@
 <template>
   <div ref="list">
     <Pagination v-if="pages > 1" :pages="pages" :currentPage="currentPage" :getLink="getLink" />
-    <table class="table is-fullwidth is-bordered is-striped">
+    <table class="table is-fullwidth is-bordered is-striped is-dark">
       <thead>
         <tr v-if="responsive.isTablet">
           <th>{{ $t('address.timestamp') }}</th>

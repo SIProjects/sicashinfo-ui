@@ -21,13 +21,13 @@
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://github.com/SIProjects/sicash">
+          <a target="_blank" href="https://github.com/SIProjects/SICash.Network">
             <Icon icon="github" brands /> Github
           </a>
         </li>
       </ul>
       <div class="copyright">
-        2017 - 2019 SICASH CHAIN FOUNDATION &copy; All rights Reserved
+        2020 SICASH CHAIN FOUNDATION &copy; All rights Reserved
       </div>
     </div>
   </footer>
@@ -37,7 +37,7 @@
   footer {
     padding-top: 6rem;
     padding-bottom: 6rem;
-    background-color: #1a191e;
+    background-color: #353a41;
     text-align: center;
     color: white;
   }

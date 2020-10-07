@@ -1,0 +1,42 @@
+@import "../node_modules/bulma/sass/utilities/_all";
+@import "./fonts.scss";
+@import "./defaults.scss";
+
+$light-blue-invert: findColorInvert($light-blue);
+$dark-invert: findColorInvert($dark);
+$link: $primary;
+$link-invert: findColorInvert($link);
+$link-hover: $link;
+$text: $white;
+$text-strong: $white;
+$grey-dark: $white;
+$scheme-main: $dark;
+$scheme-main-bis: #353a41;
+$scheme-main-ter: $dark;
+$grey-darker: $white;
+$family-primary: "euclidflexmedium";
+
+$colors: (
+  "white": ($white, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "primary": ($primary, $primary-invert),
+  "info": ($info, $info-invert),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $warning-invert),
+  "danger": ($red $red-invert),
+  "light-blue": ($light-blue $light-blue-invert),
+  "dark": ($dark, $dark-invert),
+);
+
+@import "../node_modules/bulma/bulma";
+
+.tabs a {
+  color: #bbb;
+}
+
+.tabs a:hover {
+  border-bottom-color: $link-hover;
+  color: $link-hover;
+  text-decoration: none;
+}
