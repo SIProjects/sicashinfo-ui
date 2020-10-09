@@ -2,7 +2,9 @@
   <nav class="navbar is-dark">
     <div class="navbar-brand is-size-4">
       <nuxt-link to="/" class="navbar-item navbar-logo">
-        <span class="sicash-icon sicash-icon--sicash" /> sicash.info
+        <figure class="image">
+          <img src="/images/logo.png">
+        </figure>
       </nuxt-link>
       <button type="button" class="button navbar-burger" @click="showMenu = !showMenu">
         <span></span><span></span><span></span>
@@ -101,10 +103,11 @@
 
 <style lang="less" scoped>
   .navbar-logo {
-    display: inline-block;
-    .sicash-icon {
-      vertical-align: middle;
-    }
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-item img {
+    max-height: 3rem;
   }
   .navbar-end {
     flex: auto;

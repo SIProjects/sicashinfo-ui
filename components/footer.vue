@@ -3,10 +3,10 @@
     <div class="container">
       <h3 class="is-size-4 is-uppercase">{{ $t('footer.contact_us') }}</h3>
       <div class="line"></div>
-      <a href="mailto:foundation@sicash.org">foundation@sicash.org</a>
+      <a href="mailto:support@sicash.network">support@sicash.network</a>
       <ul class="links">
         <li>
-          <a target="_blank" href="https://www.facebook.com/SICashOfficial/">
+          <a target="_blank" href="https://www.facebook.com/SiCashProject">
             <Icon icon="facebook" brands /> {{ $t('footer.facebook') }}
           </a>
         </li>
@@ -16,8 +16,8 @@
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://forum.sicash.org">
-            <span class="sicash-icon sicash-icon--sicash"></span> {{ $t('footer.forum') }}
+          <a target="_blank" href="https://discord.com/invite/BXHhFEG">
+            <Icon icon="discord" brands /> {{ $t('footer.discord') }}
           </a>
         </li>
         <li>
@@ -27,7 +27,7 @@
         </li>
       </ul>
       <div class="copyright">
-        2020 SICASH CHAIN FOUNDATION &copy; All rights Reserved
+        2020 SICash Foundation &copy; All rights Reserved
       </div>
     </div>
   </footer>
