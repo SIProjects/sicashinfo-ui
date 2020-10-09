@@ -108,6 +108,7 @@
   }
   .navbar-item img {
     max-height: 3rem;
+    width: auto;
   }
   .navbar-end {
     flex: auto;
