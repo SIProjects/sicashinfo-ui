@@ -28,7 +28,7 @@
       }
     },
     props: {
-      qrc20: {required: true}
+      src20: {required: true}
     },
     async asyncData({req, params, query, redirect, error}) {
       try {
@@ -86,8 +86,8 @@
         oldTransaction.refundValue = newTransaction.refundValue
         oldTransaction.fees = newTransaction.fees
         oldTransaction.contractSpends = newTransaction.contractSpends
-        oldTransaction.qrc20TokenTransfers = newTransaction.qrc20TokenTransfers
-        oldTransaction.qrc721TokenTransfers = newTransaction.qrc721TokenTransfers
+        oldTransaction.src20TokenTransfers = newTransaction.src20TokenTransfers
+        oldTransaction.src721TokenTransfers = newTransaction.src721TokenTransfers
       },
       subscribeTransactions() {
         this.$subscribe('address/' + this.id, 'address/transaction', this._onTransaction)

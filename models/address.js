@@ -23,9 +23,9 @@ class Address {
 
   static getTokenBalanceTransactions(id, {token, page, pageSize}, options = {}) {
     if (token) {
-      return SICashinfoAPI.get(`/address/${id}/qrc20-balance-history/${token}`, {params: {page, pageSize}, ...options})
+      return SICashinfoAPI.get(`/address/${id}/src20-balance-history/${token}`, {params: {page, pageSize}, ...options})
     } else {
-      return SICashinfoAPI.get(`/address/${id}/qrc20-balance-history`, {params: {page, pageSize}, ...options})
+      return SICashinfoAPI.get(`/address/${id}/src20-balance-history`, {params: {page, pageSize}, ...options})
     }
   }
 }

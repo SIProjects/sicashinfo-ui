@@ -14,33 +14,33 @@
             <AddressLink :address="address" plain />
           </div>
         </div>
-        <template v-if="qrc20">
-          <div class="columns" v-if="qrc20.name">
+        <template v-if="src20">
+          <div class="columns" v-if="src20.name">
             <div class="column info-title">{{ $t('contract.token.name') }}</div>
-            <div class="column info-value">{{ qrc20.name }}</div>
+            <div class="column info-value">{{ src20.name }}</div>
           </div>
-          <div class="columns" v-if="qrc20.holders">
+          <div class="columns" v-if="src20.holders">
             <div class="column info-title">{{ $t('contract.token.total_supply') }}</div>
             <div class="column info-value monospace">
-              {{ qrc20.totalSupply | qrc20(qrc20.decimals, true) }}
-              {{ qrc20.symbol || $t('contract.token.tokens') }}
+              {{ src20.totalSupply | src20(src20.decimals, true) }}
+              {{ src20.symbol || $t('contract.token.tokens') }}
             </div>
           </div>
           <div class="columns">
             <div class="column info-title">{{ $t('contract.token.token_holders') }}</div>
-            <div class="column info-value">{{ qrc20.holders }}</div>
+            <div class="column info-value">{{ src20.holders }}</div>
           </div>
         </template>
-        <template v-if="qrc721">
-          <div class="columns" v-if="qrc721.name">
+        <template v-if="src721">
+          <div class="columns" v-if="src721.name">
             <div class="column info-title">{{ $t('contract.token.name') }}</div>
-            <div class="column info-value">{{ qrc721.name }}</div>
+            <div class="column info-value">{{ src721.name }}</div>
           </div>
           <div class="columns">
             <div class="column info-title">{{ $t('contract.token.total_supply') }}</div>
             <div class="column info-value monospace">
-              {{ qrc721.totalSupply }}
-              {{ qrc721.symbol || $t('contract.token.tokens') }}
+              {{ src721.totalSupply }}
+              {{ src721.symbol || $t('contract.token.tokens') }}
             </div>
           </div>
         </template>
@@ -60,7 +60,7 @@
           <div class="column info-title">{{ $t('address.token_balances') }}</div>
           <div class="column info-value">
             <div v-for="token in existingTokenBalances" class="monospace">
-              {{ token.balance | qrc20(token.decimals) }}
+              {{ token.balance | src20(token.decimals) }}
               <AddressLink :address="token.address">
                 {{ token.symbol || token.name || $t('contract.token.tokens') }}
               </AddressLink>
@@ -82,7 +82,7 @@
           </nuxt-link>
         </li>
         <li
-          v-if="type === 'qrc20'"
+          v-if="type === 'src20'"
           :class="{'is-active': $route.matched.some(route => route.name === 'contract-id-rich-list')}">
           <nuxt-link :to="{name: 'contract-id-rich-list', params: {id}}">
             {{ $t('misc.rich_list_title') }}
@@ -90,7 +90,7 @@
         </li>
       </ul>
     </div>
-    <nuxt-child :qrc20="qrc20" />
+    <nuxt-child :src20="src20" />
   </section>
 </template>
 
@@ -110,12 +110,12 @@
         addressHex: '',
         vm: '',
         type: '',
-        qrc20: null,
-        qrc721: null,
+        src20: null,
+        src721: null,
         balance: '0',
         totalReceived: '0',
         totalSent: '0',
-        qrc20Balances: [],
+        src20Balances: [],
         transactionCount: 0
       }
     },
@@ -127,12 +127,12 @@
           addressHex: contract.addressHex,
           vm: contract.vm,
           type: contract.type,
-          qrc20: contract.qrc20,
-          qrc721: contract.qrc721,
+          src20: contract.src20,
+          src721: contract.src721,
           balance: contract.balance,
           totalReceived: contract.totalReceived,
           totalSent: contract.totalSent,
-          qrc20Balances: contract.qrc20Balances,
+          src20Balances: contract.src20Balances,
           transactionCount: contract.transactionCount
         }
       } catch (err) {
@@ -155,7 +155,7 @@
         return Math.ceil(this.transactionCount / 20)
       },
       existingTokenBalances() {
-        return this.qrc20Balances.filter(token => token.balance !== '0')
+        return this.src20Balances.filter(token => token.balance !== '0')
       }
     }
   }

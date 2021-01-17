@@ -62,7 +62,7 @@
           <div class="column info-title">{{ $t('address.token_balances') }}</div>
           <div class="column info-value">
             <div v-for="token in existingTokenBalances" class="monospace">
-              {{ token.balance | qrc20(token.decimals) }}
+              {{ token.balance | src20(token.decimals) }}
               <AddressLink :address="token.address">
                 {{ token.symbol || $t('contract.token.tokens') }}
               </AddressLink>
@@ -93,7 +93,7 @@
             {{ $t('address.balance_changes') }}
           </nuxt-link>
         </li>
-        <li v-if="qrc20Balances.length"
+        <li v-if="src20Balances.length"
           :class="{'is-active': $route.matched.some(route => route.name === 'address-id-token-balance')}">
           <nuxt-link :to="{name: 'address-id-token-balance', params: {id}}">
             {{ $t('address.token_balance_changes') }}
@@ -101,7 +101,7 @@
         </li>
       </ul>
     </div>
-    <nuxt-child :tokens="qrc20Balances.map(({address, name, symbol}) => ({address, name, symbol}))" />
+    <nuxt-child :tokens="src20Balances.map(({address, name, symbol}) => ({address, name, symbol}))" />
   </section>
 </template>
 
@@ -127,7 +127,7 @@
         totalSent: '0',
         unconfirmed: '0',
         staking: '0',
-        qrc20Balances: [],
+        src20Balances: [],
         ranking: 0,
         blocksMined: 0,
         transactionCount: 0
@@ -159,7 +159,7 @@
         return result
       },
       existingTokenBalances() {
-        return this.qrc20Balances.filter(token => token.balance !== '0')
+        return this.src20Balances.filter(token => token.balance !== '0')
       },
       myAddresses() {
         return this.$store.state.address.myAddresses

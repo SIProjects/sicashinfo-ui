@@ -16,7 +16,7 @@ Vue.filter('sicash', (satoshis, precision = null) => {
   }
 })
 
-Vue.filter('qrc20', (amount, decimals = 0, showDecimals = false) => {
+Vue.filter('src20', (amount, decimals = 0, showDecimals = false) => {
   if (decimals === 0) {
     return amount
   }

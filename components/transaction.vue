@@ -179,13 +179,13 @@
         </div>
       </div>
     </template>
-    <template v-for="({address, name, symbol, decimals, from, to, value}, index) in qrc20TokenTransfers">
+    <template v-for="({address, name, symbol, decimals, from, to, value}, index) in src20TokenTransfers">
       <div class="column is-full flex-full"></div>
       <AttributeInjector
         class="column collapse token-transfer-list"
         :class="{
           'first-item': index === 0,
-          'last-item': index === qrc20TokenTransfers.length - 1
+          'last-item': index === src20TokenTransfers.length - 1
         }">
         <div class="is-clearfix">
           <AddressLink v-if="from" :address="from" class="is-pulled-left" :highlight="highlightAddress" />
@@ -196,7 +196,7 @@
           <div v-if="to" class="is-clearfix">
             <AddressLink :address="to" class="is-pulled-left" :highlight="highlightAddress" />
             <span class="is-pulled-right amount break-word">
-              {{ value | qrc20(decimals) }}
+              {{ value | src20(decimals) }}
               <AddressLink :address="address" :highlight="highlightAddress">
                 {{ symbol || name || $t('contract.token.tokens') }}
               </AddressLink>
@@ -206,13 +206,13 @@
         </div>
       </AttributeInjector>
     </template>
-    <template v-for="({address, name, symbol, from, to, tokenId}, index) in qrc721TokenTransfers">
+    <template v-for="({address, name, symbol, from, to, tokenId}, index) in src721TokenTransfers">
       <div class="column is-full flex-full"></div>
       <AttributeInjector
         class="column collapse token-transfer-list"
         :class="{
           'first-item': index === 0,
-          'last-item': index === qrc721TokenTransfers.length - 1
+          'last-item': index === src721TokenTransfers.length - 1
         }">
         <div class="is-clearfix">
           <AddressLink v-if="from" :address="from" class="is-pulled-left" :highlight="highlightAddress" />
@@ -286,11 +286,11 @@
       contractSpends() {
         return this.transaction.contractSpends
       },
-      qrc20TokenTransfers() {
-        return this.transaction.qrc20TokenTransfers
+      src20TokenTransfers() {
+        return this.transaction.src20TokenTransfers
       },
-      qrc721TokenTransfers() {
-        return this.transaction.qrc721TokenTransfers
+      src721TokenTransfers() {
+        return this.transaction.src721TokenTransfers
       },
       contractInfo() {
         return this.outputs.map(output => {

@@ -14,11 +14,11 @@ class Contract {
   }
 
   static listTokens({page, pageSize}, options = {}) {
-    return SICashinfoAPI.get(`/qrc20`, {params: {page, pageSize}, ...options})
+    return SICashinfoAPI.get(`/src20`, {params: {page, pageSize}, ...options})
   }
 
   static richList(id, {page, pageSize}, options = {}) {
-    return SICashinfoAPI.get(`/qrc20/${id}/rich-list`, {params: {page, pageSize}, ...options})
+    return SICashinfoAPI.get(`/src20/${id}/rich-list`, {params: {page, pageSize}, ...options})
   }
 }
 

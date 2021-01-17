@@ -39,7 +39,7 @@
               </td>
               <td class="monospace">
                 <div v-for="{address, name, symbol, decimals, balance} in tokens">
-                  {{ balance.replace('-', '') | qrc20(decimals) }}
+                  {{ balance.replace('-', '') | src20(decimals) }}
                   <AddressLink :address="address">
                     {{ symbol || name || $t('contract.token.tokens') }}
                   </AddressLink>
@@ -50,7 +50,7 @@
                   <span v-if="amount > 0">+</span>
                   <span v-else-if="amount < 0">-</span>
                   <span v-else>&nbsp;</span>
-                  {{ amount.replace('-', '') | qrc20(decimals) }}
+                  {{ amount.replace('-', '') | src20(decimals) }}
                   <AddressLink :address="address">
                     {{ symbol || name || $t('contract.token.tokens') }}
                   </AddressLink>
@@ -67,7 +67,7 @@
               <tr>
                 <td class="monospace">
                   <div v-for="{address, name, symbol, decimals, balance} in tokens">
-                    {{ balance.replace('-', '') | qrc20(decimals) }}
+                    {{ balance.replace('-', '') | src20(decimals) }}
                     <AddressLink :address="address">
                       {{ symbol || name || $t('contract.token.tokens') }}
                     </AddressLink>
@@ -78,7 +78,7 @@
                     <span v-if="amount > 0">+</span>
                     <span v-else-if="amount < 0">-</span>
                     <span v-else>&nbsp;</span>
-                    {{ amount.replace('-', '') | qrc20(decimals) }}
+                    {{ amount.replace('-', '') | src20(decimals) }}
                     <AddressLink :address="address">
                       {{ symbol || name || $t('contract.token.tokens') }}
                     </AddressLink>
