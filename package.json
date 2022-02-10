@@ -38,7 +38,7 @@
     "echarts": "^4.3.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "sass-loader": "^10.0.2",
     "socket.io-client": "^2.2.0",
     "yaml-loader": "^0.5.0"
